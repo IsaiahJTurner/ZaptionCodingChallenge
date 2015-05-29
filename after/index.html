@@ -1,0 +1,133 @@
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<title>Zaption Work-Sample Template</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a href="index.html"><img src="img/logo.png" /></a>
+			</header>
+			<div class="modal fade login" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true" id="login">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+				    <form data-bind="submit: login">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="loginModalTitle">Login</h4>
+				      </div>
+				      <div class="modal-body">
+								<div class="form-group">
+							    <label for="loginModalInputEmail">Email address</label>
+							    <input type="email" class="form-control" id="loginModalInputEmail" placeholder="Email" data-bind="value: email" />
+							  </div>
+							  <div class="form-group">
+							    <label for="loginModalInputPassword">Password</label>
+							    <input type="password" class="form-control" id="loginModalInputPassword" placeholder="Password" data-bind="value: password" />
+							  </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-lg btn-grey" data-dismiss="modal">Cancel</button>
+				        <button type="submit" class="btn btn-lg btn-teal">Login</button>
+				      </div>
+			      </form>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+			<div id="tours" class="hidden tours">
+				<div class="search">
+					<div class="container search">
+						<div class="row">
+							<div class="col-sm-3">
+								<h2>Your Tours</h2>
+								<h6>View and search tours.</h6>
+							</div>
+							<div class="col-sm-9">
+								<div class="bar">
+									<i class="icon"></i>
+									<span class="right">
+										<div class="sep"></div>
+										<button class="btn btn-orange">Search</button>
+									</span>
+									<div class="input">
+										<input type="text" placeholder="Search your tours" data-bind="textInput: searchQuery" />
+									</div>
+								</div><!--- /.bar -->
+							</div><!-- /.col-sm-9 -->
+						</div><!-- /.row -->
+					</div><!-- /.container -->
+				</div><!-- /.search -->
+				<div class="container list">
+					<div class="row" data-bind="foreach: ((searchQuery().length > 0) ? searchResults : tours)"><!-- if there are search results, use that. otherwise use the tours array -->
+	      		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+		      		<a class="listing" target="_blank" data-bind="attr: { href: 'http://www.zaption.com/tours/' + id }">
+		      			<div class="thumb" data-bind="style: { backgroundImage: 'url(\'' + thumbLocation + '\')' }">
+			      		
+			          <div data-bind="text: name"></div>
+			         </a>
+		        	</div>
+	      		</div>
+	  			</div><!-- /.row -->
+					<nav>
+					  <ul class="pagination" data-bind="foreach: new Array(totalPages())">
+					    <li data-bind='css: { active: $parent.page() == $index() }'><a href="#" data-bind='text: $index()+1, click: $parent.setPage'></a></li>
+					  </ul>
+					</nav>
+	  		</div><!-- /.container -->
+			</div><!-- /#tours -->
+			<div id="home" class="container home">
+				<div class="row col-lg-8 col-lg-push-2 col-md-10 col-md-push-1">
+					<h1>Zaption Work-Sample Template</h1>
+					<h2>Rules</h2>
+					<ul>
+						<li>This is your work, and your work only. The only outside code allowed is from Knockout/jQuery/Underscore/Bootstrap, all of which are already included.</li>
+						<li>Google is encouraged for documentation and specific issues ("Why is Knockout throwing this error?"). But don't copy code snippets from StackOverflow, or add additional libraries. We want to see your code!</li>
+						<li>All of this should be done <em>without</em> running a server -- should all be client-side and usable by just opening index.html in my browser.</li>
+						<li>Make sure it works in the latest versions of Chrome.</li>
+						<li>Write in JavaScript. Not CoffeeScript, LiveScript, TypeScript, or other compile-to-JS languages.</li>
+						<li>Return this as a simple ZIP file -- not as a repo on your favorite CloudHub site!</li>
+					</ul>
+					<h2>Task</h2>
+					<p>
+						<h4>High-level summary:</h4> Use the Zaption API to display a user's tour library back to them, using Knockout.js.
+					</p>
+					<p>
+						<h4>Specific requirements:</h4>
+						<ul>
+							<li><strong>Get familiar with KnockoutJS</strong> (http://knockoutjs.com/), and try to write this app using Knockout best practices. The jQuery, Underscore, and Bootstrap libraries are also included (Knockout isn't for everything), but try to rely on Knockout instead of jQuery when appropriate.</li>
+							<li><strong>Read up on the Zaption API</strong> (http://www.zaption.com/api). Your API client secret is removed. <em>Pro Tip:</em> to speed up your dev process and avoid getting hit by rate limits, you can just save an API session token and use it for development instead of sending repeated login requests.</li>
+							<li><strong>Display a login form</strong> that takes a user's Zaption username/password and authenticates them using the API.</li>
+							<li><strong>After authenticated, list the user's tours.</strong> If they have more tours than the API returns in a single page, just show the first page (don't worry about pagination).</li>
+							<li><strong>Show a filter box</strong> that the user can type into and show only tours that match that string (client-side only, not using any Zaption API methods). This should match within words as well as full words.</li>
+							<li><strong>When filtered, highlight</strong> matching parts of tour titles etc to indicate why those results were matched.</li>
+						</ul>
+					</p>
+					<p>
+						<h4>Bonus:</h4>
+						<ul>
+							<li><strong>Make the page look good.</strong> This isn't a design challenge, but a little bit of CSS love goes a long way.</li>
+							<li><strong>Make the code as clean as you can</strong>, and adhere to best practices for Knockout and web-development in general.</li>
+							<li><strong>Implement pagination</strong> for the user's tours, using the server-side parameters.</li>
+							<li><strong>Find a bug in our API!</strong></li>
+						</ul>
+					</p>
+					<div class="text-center">
+						<button data-bind="click: showPosts" class="btn btn-lg btn-orange">Click for Magic</button>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.wrapper -->
+		<footer>
+			<div class="copyright">Copyright &copy; 2015 Isaiah Turner.</div>
+		</footer>
+		<script type="text/javascript" src="js/lib/underscore-min.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/lib/knockout-3.3.0.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>

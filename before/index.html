@@ -1,0 +1,54 @@
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<title>Zaption Work-Sample Template</title>
+	</head>
+	<body>
+		<h1>Zaption Work-Sample Template</h1>
+
+		<h2>Rules</h2>
+		<ul>
+			<li>This is your work, and your work only. The only outside code allowed is from Knockout/jQuery/Underscore/Bootstrap, all of which are already included.</li>
+			<li>Google is encouraged for documentation and specific issues ("Why is Knockout throwing this error?"). But don't copy code snippets from StackOverflow, or add additional libraries. We want to see your code!</li>
+			<li>All of this should be done <em>without</em> running a server -- should all be client-side and usable by just opening index.html in my browser.</li>
+			<li>Make sure it works in the latest versions of Chrome.</li>
+			<li>Write in JavaScript. Not CoffeeScript, LiveScript, TypeScript, or other compile-to-JS languages.</li>
+			<li>Return this as a simple ZIP file -- not as a repo on your favorite CloudHub site!</li>
+		</ul>
+
+		<h2>Task</h2>
+		<p>
+			<h4>High-level summary:</h4> Use the Zaption API to display a user's tour library back to them, using Knockout.js.
+		</p>
+		<p>
+			<h4>Specific requirements:</h4>
+			<ul>
+				<li><strong>Get familiar with KnockoutJS</strong> (http://knockoutjs.com/), and try to write this app using Knockout best practices. The jQuery, Underscore, and Bootstrap libraries are also included (Knockout isn't for everything), but try to rely on Knockout instead of jQuery when appropriate.</li>
+				<li><strong>Read up on the Zaption API</strong> (http://www.zaption.com/api). Your API client secret is g1A6kwsT2zGaUqP1gJfnU3naYXmjepvOFWboN8UoHK9AobNVwK5hW3b6Gw3Uq2O. <em>Pro Tip:</em> to speed up your dev process and avoid getting hit by rate limits, you can just save an API session token and use it for development instead of sending repeated login requests.</li>
+				<li><strong>Display a login form</strong> that takes a user's Zaption username/password and authenticates them using the API.</li>
+				<li><strong>After authenticated, list the user's tours.</strong> If they have more tours than the API returns in a single page, just show the first page (don't worry about pagination).</li>
+				<li><strong>Show a filter box</strong> that the user can type into and show only tours that match that string (client-side only, not using any Zaption API methods). This should match within words as well as full words.</li>
+				<li><strong>When filtered, highlight</strong> matching parts of tour titles etc to indicate why those results were matched.</li>
+			</ul>
+		</p>
+		<p>
+			<h4>Bonus:</h4>
+			<ul>
+				<li><strong>Make the page look good.</strong> This isn't a design challenge, but a little bit of CSS love goes a long way.</li>
+				<li><strong>Make the code as clean as you can</strong>, and adhere to best practices for Knockout and web-development in general.</li>
+				<li><strong>Implement pagination</strong> for the user's tours, using the server-side parameters.</li>
+				<li><strong>Find a bug in our API!</strong></li>
+			</ul>
+		</p>
+
+		<script type="text/javascript" src="js/lib/underscore-min.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/lib/knockout-3.3.0.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>

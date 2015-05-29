@@ -1,0 +1,15 @@
+body {
+	line-height: 1.4;
+	margin: 30px;
+	font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	margin-top: 28px;
+	margin-bottom: 16px;
+}
+h4 {
+	margin-top: 16px;
+}
